@@ -39,13 +39,19 @@ public class ProjectForTestGit {
         List<Integer> lst = new ArrayList<Integer>();
         Random rnd = new Random();
         
-        for (;lst.size()<21;) {
-            var r = rnd.nextInt(30) + 1;
+        var MAX = 30;
+        
+        var cnt = 0;
+        for (;lst.size()<MAX;) {
+            var r = rnd.nextInt(MAX + 1) + 1;
             if (lst.indexOf(r) == -1)
                 lst.add(r);
+            cnt ++;
         }
+        System.out.println(String.format("cnt: %d", cnt));
         
         printList(lst);
+        System.out.println(String.format("len: %d",lst.size()));
         
         // czyszczenie listy
         lst = clearList(lst);
